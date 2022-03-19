@@ -14,7 +14,7 @@ import java.util.List;
 
 public class RegisterFormStepDefinitions extends WebUI {
 
-    private static final Logger LOGGER = Logger.getLogger(RegisterFormPage.class);
+    private static final Logger LOGGER = Logger.getLogger(RegisterFormStepDefinitions.class);
     private RegisterFormModel registerFormModel;
     private RegisterFormPage registerFormPage;
 
@@ -49,7 +49,16 @@ public class RegisterFormStepDefinitions extends WebUI {
             registerFormModel.setCodezip(zipCode);
             registerFormModel.setUser(user);
             registerFormModel.setPassword(password);
-
+            LOGGER.info("GIVEN: Se envia el usuario correctamente"+firsName+","+
+                    lastName+","+
+                    address+","+
+                    city+","+
+                    state+","+
+                    phone+","+
+                    ssn+","+
+                    zipCode+","+
+                    user+","+
+                    password);
 
         } catch (Exception e) {
             quiteDriver();
@@ -65,7 +74,7 @@ public class RegisterFormStepDefinitions extends WebUI {
         try {
             registerFormPage = new RegisterFormPage(driver, 10, true, registerFormModel);
             registerFormPage.fillRegisterFormModel();
-
+            LOGGER.info("WHEN: se obtiene el usuario");
         } catch (Exception e) {
             quiteDriver();
             Assertions.fail(e.getMessage(), e);
@@ -75,8 +84,10 @@ public class RegisterFormStepDefinitions extends WebUI {
 
     @Then("se creara un usuario valido para poder ingresar a la plataforma")
     public void seCrearaUnUsuarioValidoParaPoderIngresarALaPlataforma() {
-
+        String result = Boolean.toString(registerFormDone().equals(registerFormPage.isRegisterFormDone()));
+        LOGGER.info("THEN: Respuesta = "+result+" "+registerFormDone()+" | "+registerFormPage.isRegisterFormDone());
         Assertions.assertEquals(registerFormDone(), registerFormPage.isRegisterFormDone());
+        x
         quiteDriver();
     }
 
