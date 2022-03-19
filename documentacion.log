@@ -1,0 +1,12 @@
+2022-03-19 17:51:37 INFO  RegisterFormStepDefinitions:52 GIVEN: Se envia el usuario correctamenteDani7,Grajales,calle 93 # 47 14,MedellÃ­n,Antioquia,3006933166,1002655516,0202,Daniela0208,090909
+2022-03-19 17:51:40 INFO  RegisterFormStepDefinitions:77 WHEN: se obtiene el usuario
+2022-03-19 17:51:40 INFO  RegisterFormStepDefinitions:88 THEN: Respuesta = true [Welcome Daniela0208, Your account was created successfully. You are now logged in.] | [Welcome Daniela0208, Your account was created successfully. You are now logged in.]
+2022-03-19 17:57:49 INFO  RegisterFormStepDefinitions:55 GIVEN: Se envia el usuario correctamenteDani7,Grajales,calle 93 # 47 14,MedellÃ­n,Antioquia,3006933166,1002655516,0202,coreen.pfeffer,090909
+2022-03-19 17:57:51 INFO  RegisterFormStepDefinitions:80 WHEN: se obtiene el usuario
+2022-03-19 17:57:51 INFO  RegisterFormStepDefinitions:91 THEN: Respuesta = true [Welcome coreen.pfeffer, Your account was created successfully. You are now logged in.] | [Welcome coreen.pfeffer, Your account was created successfully. You are now logged in.]
+2022-03-19 17:58:00 INFO  RegisterFormStepDefinitions:55 GIVEN: Se envia el usuario correctamenteDani7,Grajales,calle 93 # 47 14,MedellÃ­n,Antioquia,3006933166,1002655516,0202,augusta.jones,090909
+2022-03-19 17:58:03 INFO  RegisterFormStepDefinitions:80 WHEN: se obtiene el usuario
+2022-03-19 17:58:03 INFO  RegisterFormStepDefinitions:91 THEN: Respuesta = true [Welcome augusta.jones, Your account was created successfully. You are now logged in.] | [Welcome augusta.jones, Your account was created successfully. You are now logged in.]
+2022-03-19 17:58:10 INFO  RegisterFormStepDefinitions:55 GIVEN: Se envia el usuario correctamenteDani7,Grajales,calle 93 # 47 14,MedellÃ­n,Antioquia,3006933166,1002655516,0202,tom.mills,090909
+2022-03-19 17:58:11 INFO  RegisterFormStepDefinitions:80 WHEN: se obtiene el usuario
+2022-03-19 17:58:11 INFO  RegisterFormStepDefinitions:91 THEN: Respuesta = true [Welcome tom.mills, Your account was created successfully. You are now logged in.] | [Welcome tom.mills, Your account was created successfully. You are now logged in.]

@@ -3,6 +3,7 @@ package co.com.daniela.stepdefinition.registerform;
 import co.com.daniela.model.registerform.RegisterFormModel;
 import co.com.daniela.page.registerform.RegisterFormPage;
 import co.com.daniela.stepdefinition.setup.WebUI;
+import com.github.javafaker.Faker;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -22,6 +23,8 @@ public class RegisterFormStepDefinitions extends WebUI {
     @Given("que quiere crear una cuenta para ingresar")
     public void queQuiereCrearUnaCuentaParaIngresar() {
 
+        Faker falseador = new Faker();
+
         String firsName = "Dani7";
         String lastName = "Grajales";
         String address = "calle 93 # 47 14";
@@ -30,7 +33,7 @@ public class RegisterFormStepDefinitions extends WebUI {
         String phone = "3006933166";
         String ssn = "1002655516";
         String zipCode = "0202";
-        String user = "Daniela0208";
+        String user = falseador.name().username();
         String password = "090909";
 
         try {
@@ -87,7 +90,6 @@ public class RegisterFormStepDefinitions extends WebUI {
         String result = Boolean.toString(registerFormDone().equals(registerFormPage.isRegisterFormDone()));
         LOGGER.info("THEN: Respuesta = "+result+" "+registerFormDone()+" | "+registerFormPage.isRegisterFormDone());
         Assertions.assertEquals(registerFormDone(), registerFormPage.isRegisterFormDone());
-        x
         quiteDriver();
     }
 
