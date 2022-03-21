@@ -31,6 +31,11 @@ public class ContactFormStepDefinition extends WebUI {
             contactFormModel.setEmail("prueba2@gmail.com");
             contactFormModel.setPhone("3218115325");
             contactFormModel.setMessage("Tengo error de cuenta");
+            LOGGER.info("GIVEN: se envia mensaje correctamente"+
+                    contactFormModel.getName()+","+
+                    contactFormModel.getEmail()+","+
+                    contactFormModel.getPhone()+","+
+                    contactFormModel.getMessage()+"");
 
         } catch (Exception e) {
             quiteDriver();
@@ -46,6 +51,7 @@ public class ContactFormStepDefinition extends WebUI {
         try {
             contactFormPage = new ContactFormPage(driver, contactFormModel);
             contactFormPage.fillContactFormModel();
+            LOGGER.info("WHEN: se obtiene el mensaje");
         } catch (Exception e) {
             quiteDriver();
             Assertions.fail(e.getMessage(), e);
@@ -56,6 +62,8 @@ public class ContactFormStepDefinition extends WebUI {
 
     @Then("se mostrara un mensaje")
     public void se_mostrara_un_mensaje() {
+        String result = Boolean.toString(forContactSubmittedForm().equals(contactFormPage.isContactFormDone()));
+        LOGGER.info("THEN: Resultado = "+result+" "+forContactSubmittedForm()+" | "+contactFormPage.isContactFormDone());
         Assertions.assertEquals(forContactSubmittedForm(), contactFormPage.isContactFormDone());
         quiteDriver();
     }
@@ -82,6 +90,9 @@ public class ContactFormStepDefinition extends WebUI {
             contactFormModel.setEmail("d7cs5");
             contactFormModel.setPhone("3218115325");
             contactFormModel.setMessage("Tengo error de cuenta");
+            LOGGER.info("GIVEN: El email esta incorrecto"+
+                    contactFormModel.getEmail()+",");
+
 
         } catch (Exception e) {
             quiteDriver();
@@ -95,6 +106,7 @@ public class ContactFormStepDefinition extends WebUI {
         try {
             contactFormPage = new ContactFormPage(driver, contactFormModel);
             contactFormPage.fillContactFormModel();
+            LOGGER.info("WHEN: se obtiene un email incorrecto");
         } catch (Exception e) {
             quiteDriver();
             Assertions.fail(e.getMessage(), e);
@@ -104,6 +116,8 @@ public class ContactFormStepDefinition extends WebUI {
 
     @Then("se mostrara un mensaje de error")
     public void se_mostrara_un_mensaje_de_error() {
+        String result = Boolean.toString(forContactSubmittedForm().equals(contactFormPage.isContactFormDone()));
+        LOGGER.info("THEN: Resultado = "+result+" "+forContactSubmittedForm()+" | "+contactFormPage.isContactFormDone());
         Assertions.assertNotEquals(forContactSubmittedForm(), contactFormPage.isContactFormDone());
         quiteDriver();
     }
@@ -122,6 +136,8 @@ public class ContactFormStepDefinition extends WebUI {
             contactFormModel.setEmail("prueba2@gmail.com");
             contactFormModel.setPhone("SoyDani");
             contactFormModel.setMessage("Tengo error de cuenta");
+            LOGGER.info("GIVEN: El telefono es incorrecto"+
+                    contactFormModel.getPhone()+",");
 
         } catch (Exception e) {
             quiteDriver();
@@ -136,6 +152,7 @@ public class ContactFormStepDefinition extends WebUI {
         try {
             contactFormPage = new ContactFormPage(driver, contactFormModel);
             contactFormPage.fillContactFormModel();
+            LOGGER.info("WHEN: se obtiene un email incorrecto");
         } catch (Exception e) {
             quiteDriver();
             Assertions.fail(e.getMessage(), e);
@@ -145,6 +162,8 @@ public class ContactFormStepDefinition extends WebUI {
 
     @Then("se va a mostrar un mensaje de error")
     public void se_va_a_mostrar_un_mensaje_de_error() {
+        String result = Boolean.toString(forContactSubmittedForm().equals(contactFormPage.isContactFormDone()));
+        LOGGER.info("THEN: Resultado = "+result+" "+forContactSubmittedForm()+" | "+contactFormPage.isContactFormDone());
         Assertions.assertNotEquals(forContactSubmittedForm(), contactFormPage.isContactFormDone());
         quiteDriver();
     }
@@ -157,11 +176,14 @@ public class ContactFormStepDefinition extends WebUI {
             setUpWebDriver();
             generalStUp();
 
+
             contactFormModel = new ContactFormModel();
             contactFormModel.setName("894$#");
             contactFormModel.setEmail("prueba2@gmail.com");
             contactFormModel.setPhone("3218115325");
             contactFormModel.setMessage("Tengo error de cuenta");
+            LOGGER.info("GIVEN: El nombre es invalido"+
+                    contactFormModel.getName()+",");
 
         } catch (Exception e) {
             quiteDriver();
@@ -175,6 +197,7 @@ public class ContactFormStepDefinition extends WebUI {
         try {
             contactFormPage = new ContactFormPage(driver, contactFormModel);
             contactFormPage.fillContactFormModel();
+            LOGGER.info("WHEN: se obtiene un nombre incorrecto");
         } catch (Exception e) {
             quiteDriver();
             Assertions.fail(e.getMessage(), e);
@@ -184,6 +207,10 @@ public class ContactFormStepDefinition extends WebUI {
 
     @Then("se va a mostrar un mensaje erroneo")
     public void se_va_a_mostrar_un_mensaje_erroneo() {
+        Assertions.assertNotEquals(forContactSubmittedForm(), contactFormPage.isContactFormDone());
+        quiteDriver();
+        String result = Boolean.toString(forContactSubmittedForm().equals(contactFormPage.isContactFormDone()));
+        LOGGER.info("THEN: Resultado = "+result+" "+forContactSubmittedForm()+" | "+contactFormPage.isContactFormDone());
         Assertions.assertNotEquals(forContactSubmittedForm(), contactFormPage.isContactFormDone());
         quiteDriver();
 

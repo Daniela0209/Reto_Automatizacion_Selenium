@@ -10,3 +10,54 @@
 2022-03-19 17:58:10 INFO  RegisterFormStepDefinitions:55 GIVEN: Se envia el usuario correctamenteDani7,Grajales,calle 93 # 47 14,MedellÃ­n,Antioquia,3006933166,1002655516,0202,tom.mills,090909
 2022-03-19 17:58:11 INFO  RegisterFormStepDefinitions:80 WHEN: se obtiene el usuario
 2022-03-19 17:58:11 INFO  RegisterFormStepDefinitions:91 THEN: Respuesta = true [Welcome tom.mills, Your account was created successfully. You are now logged in.] | [Welcome tom.mills, Your account was created successfully. You are now logged in.]
+2022-03-19 19:31:02 INFO  LoginFormStepDefinitions:35 SCENARIO: Datos validos
+2022-03-19 19:31:02 INFO  LoginFormStepDefinitions:36 Given: el usuario desea ingresar a la cuentamarvin.schuster,12345,
+2022-03-19 19:31:49 INFO  LoginFormStepDefinitions:35 SCENARIO: Datos validos
+2022-03-19 19:31:49 INFO  LoginFormStepDefinitions:36 Given: el usuario desea ingresar a la cuentalester.moore,12345,
+2022-03-19 19:32:38 INFO  LoginFormStepDefinitions:35 SCENARIO: Datos validos
+2022-03-19 19:32:38 INFO  LoginFormStepDefinitions:36 Given: el usuario desea ingresar a la cuentaalden.jenkins,12345,
+2022-03-19 19:36:55 INFO  LoginFormStepDefinitions:35 SCENARIO: Datos validos
+2022-03-19 19:36:55 INFO  LoginFormStepDefinitions:36 Given: el usuario desea ingresar a la cuentatitus.waters,12345,
+2022-03-20 16:39:11 INFO  LoginFormStepDefinitions:35 SCENARIO: Datos validos
+2022-03-20 16:39:11 INFO  LoginFormStepDefinitions:36 Given: el usuario desea ingresar a la cuentaimelda.yost,12345,
+2022-03-20 20:39:20 INFO  LoginFormStepDefinitions:35 SCENARIO: Datos validos
+2022-03-20 20:39:20 INFO  LoginFormStepDefinitions:36 Given: el usuario desea ingresar a la cuentaerick.grady,12345,
+2022-03-20 20:43:39 INFO  LoginFormStepDefinitions:35 SCENARIO: Datos validos
+2022-03-20 20:43:39 INFO  LoginFormStepDefinitions:36 Given: el usuario desea ingresar a la cuentaharriette.oconnell,12345,
+2022-03-20 20:48:06 INFO  LoginFormStepDefinitions:35 SCENARIO: Datos validos
+2022-03-20 20:48:06 INFO  LoginFormStepDefinitions:36 Given: el usuario desea ingresar a la cuentaoma.lehner,12345,
+2022-03-20 20:53:26 INFO  LoginFormStepDefinitions:35 SCENARIO: Datos validos
+2022-03-20 20:53:26 INFO  LoginFormStepDefinitions:36 Given: el usuario desea ingresar a la cuentafreeman.sporer,12345,
+2022-03-20 20:54:50 INFO  LoginFormStepDefinitions:35 SCENARIO: Datos validos
+2022-03-20 20:54:50 INFO  LoginFormStepDefinitions:36 Given: el usuario desea ingresar a la cuentakatherin.balistreri,12345,
+2022-03-20 20:54:50 INFO  LoginFormStepDefinitions:52 WHEN:El usuario ingresa correctamente
+2022-03-20 20:55:12 INFO  LoginFormStepDefinitions:35 SCENARIO: Datos validos
+2022-03-20 20:55:12 INFO  LoginFormStepDefinitions:36 Given: el usuario desea ingresar a la cuentataylor.macgyver,12345,
+2022-03-20 20:55:13 INFO  LoginFormStepDefinitions:52 WHEN:El usuario ingresa correctamente
+2022-03-20 20:56:11 INFO  LoginFormStepDefinitions:35 SCENARIO: Datos validos
+2022-03-20 20:56:11 INFO  LoginFormStepDefinitions:36 Given: el usuario desea ingresar a la cuentayoung.jerde,1234578,
+2022-03-20 20:56:12 INFO  LoginFormStepDefinitions:52 WHEN:El usuario ingresa correctamente
+2022-03-20 20:59:32 INFO  LoginFormStepDefinitions:35 SCENARIO: Datos validos
+2022-03-20 20:59:38 INFO  LoginFormStepDefinitions:36 Given: el usuario desea ingresar a la cuentatennille.daniel,1234578,
+2022-03-20 21:00:11 INFO  LoginFormStepDefinitions:52 WHEN:El usuario ingresa correctamente
+2022-03-20 21:02:13 INFO  LoginFormStepDefinitions:35 SCENARIO: Datos validos
+2022-03-20 21:02:13 INFO  LoginFormStepDefinitions:36 Given: el usuario desea ingresar a la cuentamittie.cummings,1234578,
+2022-03-20 21:02:14 INFO  LoginFormStepDefinitions:52 WHEN:El usuario ingresa correctamente
+2022-03-20 21:06:51 INFO  LoginFormStepDefinitions:35 SCENARIO: Datos validos
+2022-03-20 21:06:51 INFO  LoginFormStepDefinitions:36 Given: el usuario desea ingresar a la cuentaHolaMundo,1234578,
+2022-03-20 21:06:52 INFO  LoginFormStepDefinitions:52 WHEN:El usuario ingresa correctamente
+2022-03-20 21:07:04 INFO  LoginFormStepDefinitions:35 SCENARIO: Datos validos
+2022-03-20 21:07:04 INFO  LoginFormStepDefinitions:36 Given: el usuario desea ingresar a la cuentaHolaMundo,12345678,
+2022-03-20 21:07:05 INFO  LoginFormStepDefinitions:52 WHEN:El usuario ingresa correctamente
+2022-03-20 21:07:05 INFO  LoginFormStepDefinitions:64 THEN: Resultado = false Accounts | Accounts Overview
+2022-03-20 21:10:14 INFO  LoginFormStepDefinitions:34 SCENARIO: Datos validos
+2022-03-20 21:10:14 INFO  LoginFormStepDefinitions:35 Given: el usuario desea ingresar a la cuentaHolaMundo,123456789,
+2022-03-20 21:10:14 INFO  LoginFormStepDefinitions:51 WHEN:El usuario ingresa correctamente
+2022-03-20 21:10:27 INFO  LoginFormStepDefinitions:34 SCENARIO: Datos validos
+2022-03-20 21:10:27 INFO  LoginFormStepDefinitions:35 Given: el usuario desea ingresar a la cuentaHolaMundo,12345678,
+2022-03-20 21:10:27 INFO  LoginFormStepDefinitions:51 WHEN:El usuario ingresa correctamente
+2022-03-20 21:10:27 INFO  LoginFormStepDefinitions:63 THEN: Resultado = false Accounts | Accounts Overview
+2022-03-20 21:13:17 INFO  LoginFormStepDefinitions:34 SCENARIO: Datos validos
+2022-03-20 21:13:17 INFO  LoginFormStepDefinitions:35 Given: el usuario desea ingresar a la cuentaHolaMundo,12345678,
+2022-03-20 21:13:18 INFO  LoginFormStepDefinitions:51 WHEN:El usuario ingresa correctamente
+2022-03-20 21:13:18 INFO  LoginFormStepDefinitions:63 THEN: Resultado = true Accounts Overview | Accounts Overview
