@@ -18,7 +18,7 @@ public class RegisterFormPage extends CommonActionOnPages {
     private RegisterFormModel registerFormModel;
 
     @CacheLookup
-    @FindBy(xpath = "//*[@id=\"loginPanel\"]/p[2]/a")
+    @FindBy(xpath = "//*[@id=\'loginPanel\']/p[2]/a")
     private WebElement linkRegister;
 
     @CacheLookup
@@ -66,17 +66,20 @@ public class RegisterFormPage extends CommonActionOnPages {
     private WebElement repeatedPassword;
 
      @CacheLookup
-     @FindBy(xpath = "//*[@id=\"customerForm\"]/table/tbody/tr[13]/td[2]/input" )
+     @FindBy(xpath = "//*[@id=\'customerForm\']/table/tbody/tr[13]/td[2]/input" )
      private WebElement register;
 
      @CacheLookup
-     @FindBy(xpath = "//*[@id=\"rightPanel\"]/h1")
+     @FindBy(xpath = "//*[@id=\'rightPanel\']/h1")
      private WebElement welcome;
 
      @CacheLookup
-     @FindBy(xpath = "//*[@id=\"rightPanel\"]/p")
+     @FindBy(xpath = "//*[@id=\'rightPanel\']/p")
      private WebElement welcomeMessage;
 
+     @CacheLookup
+     @FindBy(id = "customer.firstName.errors")
+     private WebElement messageErrorName;
 
 
     public RegisterFormPage(WebDriver driver, RegisterFormModel registerFormModel) {
@@ -137,5 +140,61 @@ public class RegisterFormPage extends CommonActionOnPages {
         submitregisterResult.add(getText(welcome).trim());
          submitregisterResult.add(getText(welcomeMessage).trim());
          return submitregisterResult;
+    }
+    public String isRegisterFormDoneFail(){
+        return getText(messageErrorName).trim();
+    }
+
+    public String isRegisterFormDoneFailwithExplicitWait(){
+        return withExplicitWaitGetText(messageErrorName).trim();
+    }
+
+    public List<String>isRegisterFormDonewithExplicitWait(){
+        List<String> submitregisterResult = new ArrayList<String>();
+        submitregisterResult.add(withExplicitWaitGetText(welcome).trim());
+        submitregisterResult.add(withExplicitWaitGetText(welcomeMessage).trim());
+        return submitregisterResult;
+    }
+
+    //Espera explicita
+    public void fillRegisterFormModelwithExplicitWait() throws InterruptedException{
+
+        scrollOn(linkRegister);
+        withExplicitWaitClickOn(linkRegister);
+
+        scrollOn(firstName);
+        withExplicitWaitTypeOn(firstName, registerFormModel.getFirstName());
+
+        scrollOn(lastName);
+        withExplicitWaitTypeOn(lastName, registerFormModel.getLastName());
+
+        scrollOn(address);
+        withExplicitWaitTypeOn(address, registerFormModel.getAddress());
+
+        scrollOn(city);
+        withExplicitWaitTypeOn(city, registerFormModel.getCity());
+
+        scrollOn(state);
+        withExplicitWaitTypeOn(state, registerFormModel.getState());
+
+        scrollOn(codeZip);
+        withExplicitWaitTypeOn(codeZip, registerFormModel.getCodezip());
+
+        scrollOn(phone);
+        withExplicitWaitTypeOn(phone, registerFormModel.getPhone());
+
+        scrollOn(snn);
+        withExplicitWaitTypeOn(snn, registerFormModel.getSsn());
+
+        scrollOn(username);
+        withExplicitWaitTypeOn(username, registerFormModel.getUser());
+
+        scrollOn(password);
+        withExplicitWaitTypeOn(password, registerFormModel.getPassword());
+
+        scrollOn(repeatedPassword);
+        withExplicitWaitTypeOn(repeatedPassword, registerFormModel.getPassword());
+
+        withExplicitWaitDoSubmit(register);
     }
 }

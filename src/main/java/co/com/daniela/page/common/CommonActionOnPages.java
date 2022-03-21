@@ -100,6 +100,10 @@ public class CommonActionOnPages extends BaseSikulix{
     protected void clickOn(WebElement webElement){
         webElement.click();
     }
+    protected void withExplicitWaitClickOn(WebElement webElement){
+        webDriverExplicitWait.until(elementToBeClickable(webElement)).click();
+
+    }
 
     //
 
@@ -109,6 +113,9 @@ public class CommonActionOnPages extends BaseSikulix{
 
     protected void typeOn(WebElement webElement, CharSequence... keysToSend){
         webElement.sendKeys(keysToSend);
+    }
+    protected void withExplicitWaitTypeOn(WebElement webElement, CharSequence... keys){
+        webDriverExplicitWait.until(elementToBeClickable(webElement)).sendKeys(keys);
     }
 
     //
@@ -133,6 +140,10 @@ public class CommonActionOnPages extends BaseSikulix{
         webElement.submit();
     }
 
+    protected void withExplicitWaitDoSubmit(WebElement webElement){
+        webDriverExplicitWait.until(elementToBeClickable(webElement)).submit();
+    }
+
     //
 
     protected String getText(By locator){
@@ -141,6 +152,10 @@ public class CommonActionOnPages extends BaseSikulix{
 
     protected String getText(WebElement webElement){
         return webElement.getText();
+    }
+
+    protected String withExplicitWaitGetText(WebElement webElement){
+      return webDriverExplicitWait.until(elementToBeClickable(webElement)).getText();
     }
 
 }

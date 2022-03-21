@@ -67,3 +67,137 @@
 2022-03-21 14:59:28 INFO  RegisterFormStepDefinitions:136 GIVEN: El nombre es invalido,
 2022-03-21 14:59:30 INFO  RegisterFormStepDefinitions:151 WHEN: se obtiene un nombre incorrecto
 2022-03-21 14:59:30 INFO  RegisterFormStepDefinitions:162 THEN: Respuesta = false [Welcome mckinley.koelpin, Your account was created successfully. You are now logged in.] | [Signing up is easy!, If you have an account with us you can sign-up for free instant online access. You will have to provide some personal information.]
+2022-03-21 15:02:41 INFO  LoginFormStepDefinitions:78 SCENARIO: Datos invalidos
+2022-03-21 15:02:41 INFO  LoginFormStepDefinitions:79 Given: el usuario es invalidoDaniela12,
+2022-03-21 15:02:41 INFO  LoginFormStepDefinitions:94 WHEN:Se obtiene el usuario invalido
+2022-03-21 15:05:03 INFO  RegisterFormStepDefinitions:56 GIVEN: Se envia el usuario correctamenteDani7,Grajales,calle 93 # 47 14,MedellÃ­n,Antioquia,3006933166,1002655516,0202,HolaMundo,12345678
+2022-03-21 15:05:05 INFO  RegisterFormStepDefinitions:81 WHEN: se obtiene el usuario
+2022-03-21 15:05:05 INFO  RegisterFormStepDefinitions:92 THEN: Respuesta = true [Welcome HolaMundo, Your account was created successfully. You are now logged in.] | [Welcome HolaMundo, Your account was created successfully. You are now logged in.]
+2022-03-21 15:05:28 INFO  LoginFormStepDefinitions:33 SCENARIO: Datos validos
+2022-03-21 15:05:28 INFO  LoginFormStepDefinitions:34 Given: el usuario desea ingresar a la cuentaHolaMundo,12345678,
+2022-03-21 15:05:29 INFO  LoginFormStepDefinitions:50 WHEN:El usuario ingresa correctamente
+2022-03-21 15:05:29 INFO  LoginFormStepDefinitions:62 THEN: Resultado = true Accounts Overview | Accounts Overview
+2022-03-21 15:05:41 INFO  LoginFormStepDefinitions:78 SCENARIO: Datos invalidos
+2022-03-21 15:05:41 INFO  LoginFormStepDefinitions:79 Given: el usuario es invalidoDaniela12,
+2022-03-21 15:05:42 INFO  LoginFormStepDefinitions:94 WHEN:Se obtiene el usuario invalido
+2022-03-21 15:06:50 INFO  LoginFormStepDefinitions:78 SCENARIO: Datos invalidos
+2022-03-21 15:06:50 INFO  LoginFormStepDefinitions:79 Given: el usuario es invalidoHolaMundo,
+2022-03-21 15:06:50 INFO  LoginFormStepDefinitions:94 WHEN:Se obtiene el usuario invalido
+2022-03-21 15:06:50 INFO  LoginFormStepDefinitions:107 THEN: Resultado = true Accounts Overview | Accounts Overview
+2022-03-21 15:07:06 INFO  LoginFormStepDefinitions:78 SCENARIO: Datos invalidos
+2022-03-21 15:07:06 INFO  LoginFormStepDefinitions:79 Given: el usuario es invalidoHolaMundo,
+2022-03-21 15:07:07 INFO  LoginFormStepDefinitions:94 WHEN:Se obtiene el usuario invalido
+2022-03-21 15:07:46 INFO  LoginFormStepDefinitions:78 SCENARIO: Datos invalidos
+2022-03-21 15:07:46 INFO  LoginFormStepDefinitions:79 Given: el usuario es invalidoHolaMundo,
+2022-03-21 15:07:47 INFO  LoginFormStepDefinitions:94 WHEN:Se obtiene el usuario invalido
+2022-03-21 15:13:47 INFO  LoginFormStepDefinitions:81 SCENARIO: Datos invalidos
+2022-03-21 15:13:47 INFO  LoginFormStepDefinitions:82 Given: el usuario es invalidoHolaMundo,
+2022-03-21 15:13:47 INFO  LoginFormStepDefinitions:97 WHEN:Se obtiene el usuario invalido
+2022-03-21 15:13:47 INFO  LoginFormStepDefinitions:110 THEN: Resultado = true The username and password could not be verified. | The username and password could not be verified.
+2022-03-21 16:33:02 INFO  ContactFormPage:35 GIVEN: se envia mensaje correctamenteDani,prueba2@gmail.com,3218115325,Tengo error de cuenta
+2022-03-21 16:33:03 INFO  ContactFormPage:63 WHEN: se obtiene el mensaje
+2022-03-21 16:33:06 INFO  ContactFormPage:111 GIVEN: El email esta incorrectod7cs5,
+2022-03-21 16:33:07 INFO  ContactFormPage:133 WHEN: se obtiene un email incorrecto
+2022-03-21 16:33:10 INFO  ContactFormPage:171 GIVEN: El telefono es incorrectoSoyDani,
+2022-03-21 16:33:11 INFO  ContactFormPage:194 WHEN: se obtiene un email incorrecto
+2022-03-21 16:33:14 INFO  ContactFormPage:232 GIVEN: El nombre es invalido894$#,
+2022-03-21 16:33:15 INFO  ContactFormPage:253 WHEN: se obtiene un nombre incorrecto
+2022-03-21 16:42:13 INFO  ContactFormPage:35 GIVEN: se envia mensaje correctamenteDani,prueba2@gmail.com,3218115325,Tengo error de cuenta
+2022-03-21 16:42:14 INFO  ContactFormPage:63 WHEN: se obtiene el mensaje
+2022-03-21 16:42:14 INFO  ContactFormPage:78 THEN: Resultado = true [Thank you Dani, A Customer Care Representative will be contacting you.] | [Thank you Dani, A Customer Care Representative will be contacting you.]
+2022-03-21 16:42:18 INFO  ContactFormPage:111 GIVEN: El email esta incorrectod7cs5,
+2022-03-21 16:42:19 INFO  ContactFormPage:133 WHEN: se obtiene un email incorrecto
+2022-03-21 16:42:19 INFO  ContactFormPage:146 THEN: Resultado = true [Thank you Dani, A Customer Care Representative will be contacting you.] | [Thank you Dani, A Customer Care Representative will be contacting you.]
+2022-03-21 16:42:22 INFO  ContactFormPage:171 GIVEN: El telefono es incorrectoSoyDani,
+2022-03-21 16:42:23 INFO  ContactFormPage:194 WHEN: se obtiene un email incorrecto
+2022-03-21 16:42:24 INFO  ContactFormPage:207 THEN: Resultado = true [Thank you Dani, A Customer Care Representative will be contacting you.] | [Thank you Dani, A Customer Care Representative will be contacting you.]
+2022-03-21 16:42:26 INFO  ContactFormPage:232 GIVEN: El nombre es invalido894$#,
+2022-03-21 16:42:27 INFO  ContactFormPage:253 WHEN: se obtiene un nombre incorrecto
+2022-03-21 16:42:28 INFO  ContactFormPage:266 THEN: Resultado = false [Thank you 894$#, A Customer Care Representative will be contacting you.] | [Thank you 894$#, A Customer Care Representative will be contacting you.]
+2022-03-21 16:43:42 INFO  RegisterFormStepDefinitions:57 GIVEN: Se envia el usuario correctamenteDani7,Grajales,calle 93 # 47 14,MedellÃ­n,Antioquia,3006933166,1002655516,0202,HolaMundo,12345678
+2022-03-21 16:43:44 INFO  RegisterFormStepDefinitions:88 WHEN: se obtiene el usuario
+2022-03-21 16:43:44 INFO  RegisterFormStepDefinitions:101 THEN: Respuesta = false [Welcome HolaMundo, Your account was created successfully. You are now logged in.] | [Signing up is easy!, If you have an account with us you can sign-up for free instant online access. You will have to provide some personal information.]
+2022-03-21 16:43:47 INFO  RegisterFormStepDefinitions:151 GIVEN: El nombre es invalido,
+2022-03-21 16:43:49 INFO  RegisterFormStepDefinitions:172 WHEN: se obtiene un nombre incorrecto
+2022-03-21 16:43:49 INFO  RegisterFormStepDefinitions:185 THEN: Respuesta = false [Welcome elvia.runolfsdottir, Your account was created successfully. You are now logged in.] | [Signing up is easy!, If you have an account with us you can sign-up for free instant online access. You will have to provide some personal information.]
+2022-03-21 16:48:08 INFO  RegisterFormStepDefinitions:57 GIVEN: Se envia el usuario correctamenteDani7,Grajales,calle 93 # 47 14,MedellÃ­n,Antioquia,3006933166,1002655516,0202,HolaMundo,12345678
+2022-03-21 16:48:10 INFO  RegisterFormStepDefinitions:88 WHEN: se obtiene el usuario
+2022-03-21 16:48:10 INFO  RegisterFormStepDefinitions:101 THEN: Respuesta = false [Welcome HolaMundo, Your account was created successfully. You are now logged in.] | [Signing up is easy!, If you have an account with us you can sign-up for free instant online access. You will have to provide some personal information.]
+2022-03-21 16:48:13 INFO  RegisterFormStepDefinitions:151 GIVEN: El nombre es invalido,
+2022-03-21 16:48:15 INFO  RegisterFormStepDefinitions:172 WHEN: se obtiene un nombre incorrecto
+2022-03-21 16:48:15 INFO  RegisterFormStepDefinitions:185 THEN: Respuesta = false [Welcome noel.lubowitz, Your account was created successfully. You are now logged in.] | [Signing up is easy!, If you have an account with us you can sign-up for free instant online access. You will have to provide some personal information.]
+2022-03-21 16:56:48 INFO  RegisterFormStepDefinitions:57 GIVEN: Se envia el usuario correctamenteDani7,Grajales,calle 93 # 47 14,MedellÃ­n,Antioquia,3006933166,1002655516,0202,HolaMundo,12345678
+2022-03-21 16:56:50 INFO  RegisterFormStepDefinitions:88 WHEN: se obtiene el usuario
+2022-03-21 16:56:50 INFO  RegisterFormStepDefinitions:101 THEN: Respuesta = false [Welcome HolaMundo, Your account was created successfully. You are now logged in.] | [Signing up is easy!, If you have an account with us you can sign-up for free instant online access. You will have to provide some personal information.]
+2022-03-21 16:56:53 INFO  RegisterFormStepDefinitions:151 GIVEN: El nombre es invalido,
+2022-03-21 16:56:55 INFO  RegisterFormStepDefinitions:172 WHEN: se obtiene un nombre incorrecto
+2022-03-21 16:56:55 INFO  RegisterFormStepDefinitions:185 THEN: Respuesta = false [Welcome gavin.block, Your account was created successfully. You are now logged in.] | [First name is required.]
+2022-03-21 17:01:22 INFO  RegisterFormStepDefinitions:57 GIVEN: Se envia el usuario correctamenteDani7,Grajales,calle 93 # 47 14,MedellÃ­n,Antioquia,3006933166,1002655516,0202,HolaMundo,12345678
+2022-03-21 17:01:24 INFO  RegisterFormStepDefinitions:88 WHEN: se obtiene el usuario
+2022-03-21 17:01:24 INFO  RegisterFormStepDefinitions:101 THEN: Respuesta = false [Welcome HolaMundo, Your account was created successfully. You are now logged in.] | [Signing up is easy!, If you have an account with us you can sign-up for free instant online access. You will have to provide some personal information.]
+2022-03-21 17:01:27 INFO  RegisterFormStepDefinitions:151 GIVEN: El nombre es invalido,
+2022-03-21 17:01:29 INFO  RegisterFormStepDefinitions:172 WHEN: se obtiene un nombre incorrecto
+2022-03-21 17:01:29 INFO  RegisterFormStepDefinitions:185 THEN: Respuesta = false [Welcome sean.erdman, Your account was created successfully. You are now logged in.] | [First name is required.]
+2022-03-21 17:04:29 INFO  RegisterFormStepDefinitions:57 GIVEN: Se envia el usuario correctamenteDani7,Grajales,calle 93 # 47 14,MedellÃ­n,Antioquia,3006933166,1002655516,0202,HolaMundo,12345678
+2022-03-21 17:04:31 INFO  RegisterFormStepDefinitions:88 WHEN: se obtiene el usuario
+2022-03-21 17:05:35 INFO  RegisterFormStepDefinitions:101 THEN: Respuesta = false [Welcome HolaMundo, Your account was created successfully. You are now logged in.] | [Signing up is easy!, If you have an account with us you can sign-up for free instant online access. You will have to provide some personal information.]
+2022-03-21 17:06:19 INFO  RegisterFormStepDefinitions:151 GIVEN: El nombre es invalido,
+2022-03-21 17:06:28 INFO  RegisterFormStepDefinitions:172 WHEN: se obtiene un nombre incorrecto
+2022-03-21 17:06:29 INFO  RegisterFormStepDefinitions:185 THEN: Respuesta = false [Welcome joan.greenholt, Your account was created successfully. You are now logged in.] | [First name is required.]
+2022-03-21 17:08:04 INFO  RegisterFormStepDefinitions:57 GIVEN: Se envia el usuario correctamenteDani7,Grajales,calle 93 # 47 14,MedellÃ­n,Antioquia,3006933166,1002655516,0202,HolaMundo,12345678
+2022-03-21 17:08:06 INFO  RegisterFormStepDefinitions:88 WHEN: se obtiene el usuario
+2022-03-21 17:11:40 INFO  RegisterFormStepDefinitions:57 GIVEN: Se envia el usuario correctamenteDani7,Grajales,calle 93 # 47 14,MedellÃ­n,Antioquia,3006933166,1002655516,0202,HolaMundo,12345678
+2022-03-21 17:11:42 INFO  RegisterFormStepDefinitions:88 WHEN: se obtiene el usuario
+2022-03-21 17:27:58 INFO  RegisterFormStepDefinitions:57 GIVEN: Se envia el usuario correctamenteDani7,Grajales,calle 93 # 47 14,MedellÃ­n,Antioquia,3006933166,1002655516,0202,HolaMundo11,12345678
+2022-03-21 17:28:00 INFO  RegisterFormStepDefinitions:88 WHEN: se obtiene el usuario
+2022-03-21 17:28:00 INFO  RegisterFormStepDefinitions:103 THEN: Respuesta = true [Welcome HolaMundo11, Your account was created successfully. You are now logged in.] | [Welcome HolaMundo11, Your account was created successfully. You are now logged in.]
+2022-03-21 17:28:03 INFO  RegisterFormStepDefinitions:153 GIVEN: El nombre es invalido,
+2022-03-21 17:28:05 INFO  RegisterFormStepDefinitions:174 WHEN: se obtiene un nombre incorrecto
+2022-03-21 17:28:05 INFO  RegisterFormStepDefinitions:187 THEN: Respuesta = false [Welcome lyda.hamill, Your account was created successfully. You are now logged in.] | [First name is required.]
+2022-03-21 17:31:23 INFO  RegisterFormStepDefinitions:153 GIVEN: El nombre es invalido,
+2022-03-21 17:31:25 INFO  RegisterFormStepDefinitions:174 WHEN: se obtiene un nombre incorrecto
+2022-03-21 17:31:25 INFO  RegisterFormStepDefinitions:187 THEN: Respuesta = false [Welcome stephani.armstrong, Your account was created successfully. You are now logged in.] | [First name is required.]
+2022-03-21 17:36:22 INFO  RegisterFormStepDefinitions:158 GIVEN: El nombre es invalido,
+2022-03-21 17:36:24 INFO  RegisterFormStepDefinitions:179 WHEN: se obtiene un nombre incorrecto
+2022-03-21 17:36:24 INFO  RegisterFormStepDefinitions:192 THEN: Respuesta = false First name is required. | [First name is required.]
+2022-03-21 17:39:35 INFO  RegisterFormStepDefinitions:158 GIVEN: El nombre es invalido,
+2022-03-21 17:39:37 INFO  RegisterFormStepDefinitions:179 WHEN: se obtiene un nombre incorrecto
+2022-03-21 17:39:37 INFO  RegisterFormStepDefinitions:192 THEN: Respuesta = false [First name is required.] | [First name is required.]
+2022-03-21 17:44:05 INFO  RegisterFormStepDefinitions:158 GIVEN: El nombre es invalido,
+2022-03-21 17:44:07 INFO  RegisterFormStepDefinitions:179 WHEN: se obtiene un nombre incorrecto
+2022-03-21 17:44:07 INFO  RegisterFormStepDefinitions:192 THEN: Respuesta = false First name is required. | [First name is required.]
+2022-03-21 17:51:01 INFO  RegisterFormStepDefinitions:158 GIVEN: El nombre es invalido,
+2022-03-21 17:51:02 INFO  RegisterFormStepDefinitions:179 WHEN: se obtiene un nombre incorrecto
+2022-03-21 17:51:03 INFO  RegisterFormStepDefinitions:192 THEN: Respuesta = true First name is required. | First name is required.
+2022-03-21 17:51:28 INFO  RegisterFormStepDefinitions:57 GIVEN: Se envia el usuario correctamenteDani7,Grajales,calle 93 # 47 14,MedellÃ­n,Antioquia,3006933166,1002655516,0202,HolaMundo11,12345678
+2022-03-21 17:51:30 INFO  RegisterFormStepDefinitions:88 WHEN: se obtiene el usuario
+2022-03-21 17:51:30 INFO  RegisterFormStepDefinitions:103 THEN: Respuesta = false [Welcome HolaMundo11, Your account was created successfully. You are now logged in.] | [Signing up is easy!, If you have an account with us you can sign-up for free instant online access. You will have to provide some personal information.]
+2022-03-21 17:51:33 INFO  RegisterFormStepDefinitions:158 GIVEN: El nombre es invalido,
+2022-03-21 17:51:35 INFO  RegisterFormStepDefinitions:179 WHEN: se obtiene un nombre incorrecto
+2022-03-21 17:51:35 INFO  RegisterFormStepDefinitions:192 THEN: Respuesta = true First name is required. | First name is required.
+2022-03-21 17:52:47 INFO  RegisterFormStepDefinitions:57 GIVEN: Se envia el usuario correctamenteDani7,Grajales,calle 93 # 47 14,MedellÃ­n,Antioquia,3006933166,1002655516,0202,loan.wunsch,12345678
+2022-03-21 17:52:49 INFO  RegisterFormStepDefinitions:88 WHEN: se obtiene el usuario
+2022-03-21 17:52:49 INFO  RegisterFormStepDefinitions:103 THEN: Respuesta = true [Welcome loan.wunsch, Your account was created successfully. You are now logged in.] | [Welcome loan.wunsch, Your account was created successfully. You are now logged in.]
+2022-03-21 17:52:53 INFO  RegisterFormStepDefinitions:158 GIVEN: El nombre es invalido,
+2022-03-21 17:52:54 INFO  RegisterFormStepDefinitions:179 WHEN: se obtiene un nombre incorrecto
+2022-03-21 17:52:54 INFO  RegisterFormStepDefinitions:192 THEN: Respuesta = true First name is required. | First name is required.
+2022-03-21 17:53:19 INFO  LoginFormStepDefinitions:37 SCENARIO: Datos validos
+2022-03-21 17:53:19 INFO  LoginFormStepDefinitions:38 Given: el usuario desea ingresar a la cuentaHolaMundo,12345678,
+2022-03-21 17:53:20 INFO  LoginFormStepDefinitions:60 WHEN:El usuario ingresa correctamente
+2022-03-21 17:53:20 INFO  LoginFormStepDefinitions:74 THEN: Resultado = true Accounts Overview | Accounts Overview
+2022-03-21 17:53:24 INFO  LoginFormStepDefinitions:95 SCENARIO: Datos invalidos
+2022-03-21 17:53:24 INFO  LoginFormStepDefinitions:96 Given: el usuario es invalidoHolaMundo,
+2022-03-21 17:53:25 INFO  LoginFormStepDefinitions:117 WHEN:Se obtiene el usuario invalido
+2022-03-21 17:53:25 INFO  LoginFormStepDefinitions:132 THEN: Resultado = true The username and password could not be verified. | The username and password could not be verified.
+2022-03-21 17:53:41 INFO  ContactFormPage:35 GIVEN: se envia mensaje correctamenteDani,prueba2@gmail.com,3218115325,Tengo error de cuenta
+2022-03-21 17:53:42 INFO  ContactFormPage:63 WHEN: se obtiene el mensaje
+2022-03-21 17:53:43 INFO  ContactFormPage:78 THEN: Resultado = true [Thank you Dani, A Customer Care Representative will be contacting you.] | [Thank you Dani, A Customer Care Representative will be contacting you.]
+2022-03-21 17:53:46 INFO  ContactFormPage:111 GIVEN: El email esta incorrectod7cs5,
+2022-03-21 17:53:47 INFO  ContactFormPage:133 WHEN: se obtiene un email incorrecto
+2022-03-21 17:53:47 INFO  ContactFormPage:146 THEN: Resultado = true [Thank you Dani, A Customer Care Representative will be contacting you.] | [Thank you Dani, A Customer Care Representative will be contacting you.]
+2022-03-21 17:53:49 INFO  ContactFormPage:171 GIVEN: El telefono es incorrectoSoyDani,
+2022-03-21 17:53:51 INFO  ContactFormPage:194 WHEN: se obtiene un email incorrecto
+2022-03-21 17:53:51 INFO  ContactFormPage:207 THEN: Resultado = true [Thank you Dani, A Customer Care Representative will be contacting you.] | [Thank you Dani, A Customer Care Representative will be contacting you.]
+2022-03-21 17:53:53 INFO  ContactFormPage:232 GIVEN: El nombre es invalido894$#,
+2022-03-21 17:53:54 INFO  ContactFormPage:253 WHEN: se obtiene un nombre incorrecto
+2022-03-21 17:53:54 INFO  ContactFormPage:266 THEN: Resultado = false [Thank you 894$#, A Customer Care Representative will be contacting you.] | [Thank you 894$#, A Customer Care Representative will be contacting you.]

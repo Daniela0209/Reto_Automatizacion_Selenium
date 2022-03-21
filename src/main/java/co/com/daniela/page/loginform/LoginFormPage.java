@@ -31,6 +31,11 @@ public class LoginFormPage extends CommonActionOnPages {
     @FindBy(xpath = "//*[@id=\'rightPanel\']/div/div/h1")
     private WebElement accounts;
 
+    @CacheLookup
+    @FindBy(xpath = "//*[@id=\'rightPanel\']/p")
+    private WebElement messageError;
+
+
     public LoginFormPage(WebDriver driver, LoginFormModel loginFormModel){
         super(driver);
         pageFactoryInitElement(driver, this);
@@ -55,5 +60,27 @@ public class LoginFormPage extends CommonActionOnPages {
     public String isLoginFormDone(){
      return getText(accounts).trim();
 
+    }
+    public String isLoginFormDoneWithExplicitWait(){
+        return withExplicitWaitGetText(accounts).trim();
+    }
+
+    public String isLoginFalsePasswordDone(){
+        return getText(messageError).trim();
+    }
+
+    public String isLoginFalsePasswordwithExplicitWait(){
+        return withExplicitWaitGetText(messageError).trim();
+    }
+
+    //Espera explicita
+    public void fillLoginFormModelwithExplicitWait() throws InterruptedException{
+        scrollOn(userName);
+        withExplicitWaitTypeOn(userName, loginFormModel.getLogin());
+
+        scrollOn(password);
+        withExplicitWaitTypeOn(password, loginFormModel.getPassword());
+
+        withExplicitWaitDoSubmit(submit);
     }
 }

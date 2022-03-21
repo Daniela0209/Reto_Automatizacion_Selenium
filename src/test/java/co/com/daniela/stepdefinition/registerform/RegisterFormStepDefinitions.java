@@ -1,7 +1,6 @@
 package co.com.daniela.stepdefinition.registerform;
 
 import co.com.daniela.model.registerform.RegisterFormModel;
-import co.com.daniela.page.contactform.ContactFormPage;
 import co.com.daniela.page.registerform.RegisterFormPage;
 import co.com.daniela.stepdefinition.setup.WebUI;
 import com.github.javafaker.Faker;
@@ -19,6 +18,7 @@ public class RegisterFormStepDefinitions extends WebUI {
     private static final Logger LOGGER = Logger.getLogger(RegisterFormStepDefinitions.class);
     private RegisterFormModel registerFormModel;
     private RegisterFormPage registerFormPage;
+    private Boolean withExplicitWait = true;
 
 
     @Given("que quiere crear una cuenta para ingresar")
@@ -35,7 +35,8 @@ public class RegisterFormStepDefinitions extends WebUI {
         String ssn = "1002655516";
         String zipCode = "0202";
         String user = falseador.name().username();
-        String password = "090909";
+        String password = "12345678";
+
 
         try {
             setUpLog4j2();
@@ -76,8 +77,14 @@ public class RegisterFormStepDefinitions extends WebUI {
     public void elUsuarioIngresaLosSiguientesDatosNombreApellidoDireccionCiudadEstadoCodigozipNumeroTelefonoIdentificacionUsuarioYContrasena() {
 
         try {
-            registerFormPage = new RegisterFormPage(driver, 10, true, registerFormModel);
-            registerFormPage.fillRegisterFormModel();
+            if (withExplicitWait){
+                registerFormPage = new RegisterFormPage(driver,5,withExplicitWait,registerFormModel);
+                registerFormPage.fillRegisterFormModelwithExplicitWait();
+            }else{
+                registerFormPage = new RegisterFormPage(driver, 10, true, registerFormModel);
+                registerFormPage.fillRegisterFormModel();
+            }
+
             LOGGER.info("WHEN: se obtiene el usuario");
         } catch (Exception e) {
             quiteDriver();
@@ -88,9 +95,19 @@ public class RegisterFormStepDefinitions extends WebUI {
 
     @Then("se creara un usuario valido para poder ingresar a la plataforma")
     public void seCrearaUnUsuarioValidoParaPoderIngresarALaPlataforma() {
-        String result = Boolean.toString(registerFormDone().equals(registerFormPage.isRegisterFormDone()));
-        LOGGER.info("THEN: Respuesta = "+result+" "+registerFormDone()+" | "+registerFormPage.isRegisterFormDone());
-        Assertions.assertEquals(registerFormDone(), registerFormPage.isRegisterFormDone());
+        String respuesta;
+        String result;
+        if (withExplicitWait){
+            respuesta=registerFormPage.isRegisterFormDonewithExplicitWait().toString();
+            result= Boolean.toString(registerFormDone().equals(registerFormPage.isRegisterFormDonewithExplicitWait()));
+            LOGGER.info("THEN: Respuesta = "+result+" "+registerFormDone()+" | "+registerFormPage.isRegisterFormDonewithExplicitWait());
+            Assertions.assertEquals(registerFormDone(), registerFormPage.isRegisterFormDonewithExplicitWait());
+        }else {
+            result= Boolean.toString(registerFormDone().equals(registerFormPage.isRegisterFormDone()));
+            LOGGER.info("THEN: Respuesta = "+result+" "+registerFormDone()+" | "+registerFormPage.isRegisterFormDone());
+            Assertions.assertEquals(registerFormDone(), registerFormPage.isRegisterFormDone());
+        }
+
         quiteDriver();
     }
 
@@ -99,6 +116,11 @@ public class RegisterFormStepDefinitions extends WebUI {
         submitRegisterFormResult.add("Welcome " + registerFormModel.getUser());
         submitRegisterFormResult.add("Your account was created successfully. You are now logged in." );
         return submitRegisterFormResult;
+    }
+
+
+    private String registerFormDoneFail() {
+        return "First name is required.";
     }
 
     @Given("que desea crear una cuenta para ingresar")
@@ -146,8 +168,14 @@ public class RegisterFormStepDefinitions extends WebUI {
     @When("El usuario ingresa los siguientes datos: apellido,  direccion, ciudad, estado, codigozip, numero telefono, identificacion, usuario y contrasena")
     public void el_usuario_ingresa_los_siguientes_datos_apellido_direccion_ciudad_estado_codigozip_numero_telefono_identificacion_usuario_y_contrasena() {
         try {
-            registerFormPage = new RegisterFormPage(driver, registerFormModel);
-            registerFormPage.fillRegisterFormModel();
+            if (withExplicitWait){
+                registerFormPage = new RegisterFormPage(driver,5,withExplicitWait,registerFormModel);
+                registerFormPage.fillRegisterFormModelwithExplicitWait();
+            }else {
+                registerFormPage = new RegisterFormPage(driver, registerFormModel);
+                registerFormPage.fillRegisterFormModel();
+            }
+
             LOGGER.info("WHEN: se obtiene un nombre incorrecto");
         } catch (Exception e) {
             quiteDriver();
@@ -158,9 +186,17 @@ public class RegisterFormStepDefinitions extends WebUI {
     @Then("sale un mensaje de error por no ingresar el nombre")
     public void sale_un_mensaje_de_error_por_no_ingresar_el_nombre() {
 
-        String result = Boolean.toString(registerFormDone().equals(registerFormPage.isRegisterFormDone()));
-        LOGGER.info("THEN: Respuesta = "+result+" "+registerFormDone()+" | "+registerFormPage.isRegisterFormDone());
-        Assertions.assertNotEquals(registerFormDone(), registerFormPage.isRegisterFormDone());
+        String result;
+        if (withExplicitWait){
+            result= Boolean.toString(registerFormDoneFail().equals(registerFormPage.isRegisterFormDoneFailwithExplicitWait()));
+            LOGGER.info("THEN: Respuesta = "+result+" "+registerFormDoneFail()+" | "+registerFormPage.isRegisterFormDoneFailwithExplicitWait());
+            Assertions.assertEquals(registerFormDoneFail(), registerFormPage.isRegisterFormDoneFailwithExplicitWait());
+        }else {
+            result= Boolean.toString(registerFormDoneFail().equals(registerFormPage.isRegisterFormDoneFail()));
+            LOGGER.info("THEN: Respuesta = "+result+" "+registerFormDoneFail()+" | "+registerFormPage.isRegisterFormDoneFail());
+            Assertions.assertEquals(registerFormDoneFail(), registerFormPage.isRegisterFormDoneFail());
+        }
+
         quiteDriver();
     }
 

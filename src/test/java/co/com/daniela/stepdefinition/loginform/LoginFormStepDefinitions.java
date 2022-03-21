@@ -14,10 +14,14 @@ public class LoginFormStepDefinitions extends WebUI {
     private static final Logger LOGGER = Logger.getLogger(LoginFormStepDefinitions.class);
     private LoginFormModel loginFormModel;
     private LoginFormPage loginFormPage;
+    private Boolean withExplicitWait = true;
 
 
     private String forLoginSumitForm(){
         return "Accounts Overview";
+    }
+    private String forLoginFailPasswordForm(){
+        return "The username and password could not be verified.";
     }
 
     @Given("que el usuario desea poder entrar a su cuenta")
@@ -45,8 +49,14 @@ public class LoginFormStepDefinitions extends WebUI {
     public void el_usuario_ingresa_en_la_pagina_el_usuario_y_contrasena_correctos() {
 
         try {
-            loginFormPage = new LoginFormPage(driver,10,true,loginFormModel);
-            loginFormPage.fillLoginFormModel();
+            if (withExplicitWait){
+                loginFormPage = new LoginFormPage(driver,5,withExplicitWait,loginFormModel);
+                loginFormPage.fillLoginFormModelwithExplicitWait();
+            }else{
+                loginFormPage = new LoginFormPage(driver,10,true,loginFormModel);
+                loginFormPage.fillLoginFormModel();
+            }
+
             LOGGER.info("WHEN:El usuario ingresa correctamente");
         }
         catch (Exception e){
@@ -58,9 +68,16 @@ public class LoginFormStepDefinitions extends WebUI {
     }
     @Then("Se muestra informacion de la cuenta")
     public void se_muestra_informacion_de_la_cuenta() {
-        String result = Boolean.toString(forLoginSumitForm().equals(loginFormPage.isLoginFormDone()));
-        LOGGER.info("THEN: Resultado = "+result+" "+forLoginSumitForm()+" | "+loginFormPage.isLoginFormDone());
-        Assertions.assertEquals(forLoginSumitForm(), loginFormPage.isLoginFormDone());
+        String result;
+        if (withExplicitWait){
+            result= Boolean.toString(forLoginSumitForm().equals(loginFormPage.isLoginFormDoneWithExplicitWait()));
+            LOGGER.info("THEN: Resultado = "+result+" "+forLoginSumitForm()+" | "+loginFormPage.isLoginFormDoneWithExplicitWait());
+            Assertions.assertEquals(forLoginSumitForm(), loginFormPage.isLoginFormDoneWithExplicitWait());
+        }else {
+            result= Boolean.toString(forLoginSumitForm().equals(loginFormPage.isLoginFormDone()));
+            LOGGER.info("THEN: Resultado = "+result+" "+forLoginSumitForm()+" | "+loginFormPage.isLoginFormDone());
+            Assertions.assertEquals(forLoginSumitForm(), loginFormPage.isLoginFormDone());
+        }
         quiteDriver();
     }
 
@@ -73,8 +90,8 @@ public class LoginFormStepDefinitions extends WebUI {
             generalStUp();
 
             loginFormModel = new LoginFormModel();
-            loginFormModel.setLogin("Daniela12");
-            loginFormModel.setPassword("12345678");
+            loginFormModel.setLogin("HolaMundo");
+            loginFormModel.setPassword("1234");
             LOGGER.info("SCENARIO: Datos invalidos");
             LOGGER.info("Given: el usuario es invalido"+
                     loginFormModel.getLogin()+",");
@@ -89,8 +106,14 @@ public class LoginFormStepDefinitions extends WebUI {
     public void el_usuario_ingresa_en_la_pagina_el_usuario_invalido_y_contrasena_correcta() {
 
         try {
-            loginFormPage = new LoginFormPage(driver,loginFormModel);
-            loginFormPage.fillLoginFormModel();
+            if (withExplicitWait){
+                loginFormPage = new LoginFormPage(driver,5,withExplicitWait,loginFormModel);
+                loginFormPage.fillLoginFormModelwithExplicitWait();
+            }else {
+                loginFormPage = new LoginFormPage(driver,loginFormModel);
+                loginFormPage.fillLoginFormModel();
+            }
+
             LOGGER.info("WHEN:Se obtiene el usuario invalido");
         }
         catch (Exception e){
@@ -103,9 +126,17 @@ public class LoginFormStepDefinitions extends WebUI {
     @Then("Se muestra un mensaje de error en los datos ingresados")
     public void se_muestra_un_mensaje_de_error_en_los_datos_ingresados() {
 
-        String result = Boolean.toString(forLoginSumitForm().equals(loginFormPage.isLoginFormDone()));
-        LOGGER.info("THEN: Resultado = "+result+" "+forLoginSumitForm()+" | "+loginFormPage.isLoginFormDone());
-        Assertions.assertNotEquals(forLoginSumitForm(), loginFormPage.isLoginFormDone());
+        String result;
+        if (withExplicitWait){
+            result= Boolean.toString(forLoginFailPasswordForm().equals(loginFormPage.isLoginFalsePasswordwithExplicitWait()));
+            LOGGER.info("THEN: Resultado = "+result+" "+forLoginFailPasswordForm()+" | "+loginFormPage.isLoginFalsePasswordwithExplicitWait());
+            Assertions.assertEquals(forLoginFailPasswordForm(), loginFormPage.isLoginFalsePasswordwithExplicitWait());
+        }else {
+            result= Boolean.toString(forLoginFailPasswordForm().equals(loginFormPage.isLoginFalsePasswordDone()));
+            LOGGER.info("THEN: Resultado = "+result+" "+forLoginFailPasswordForm()+" | "+loginFormPage.isLoginFalsePasswordDone());
+            Assertions.assertEquals(forLoginFailPasswordForm(), loginFormPage.isLoginFalsePasswordDone());
+        }
+
         quiteDriver();
 
     }

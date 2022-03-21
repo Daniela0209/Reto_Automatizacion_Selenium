@@ -21,7 +21,3 @@ A
 documentacion.log,8\1\81b5df733e9f705bea4487dd846e5dba80867c58
 p
 @src/main/java/co/com/daniela/model/loginform/LoginFormModel.java,6\4\642d1fe823f88e0cb678af49ca8634c46772f67d
-l
-<src/test/java/co/com/daniela/stepdefinition/setup/WebUI.java,2\7\27f74b3da4f23c1c07ec5f78238b0eafe42ee71d
-q
-Asrc/main/java/co/com/daniela/page/common/CommonActionOnPages.java,f\6\f6403358e39a083f33af23a1b2b72cc936e71f2d

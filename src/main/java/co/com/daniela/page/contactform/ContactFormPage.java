@@ -12,6 +12,8 @@ import org.openqa.selenium.support.FindBy;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.openqa.selenium.By.xpath;
+
 public class ContactFormPage extends CommonActionOnPages {
     private static final Logger LOGGER = Logger.getLogger(ContactFormPage.class);
     private ContactFormModel contactFormModel;
@@ -41,8 +43,13 @@ public class ContactFormPage extends CommonActionOnPages {
     @FindBy(id = "message")
     private WebElement message;
 
-    private final By returnCustomer = By.xpath("//*[@id=\"rightPanel\"]/p[1]");
-    private final By returnMessage = By.xpath("//*[@id=\"rightPanel\"]/p[2]");
+    @CacheLookup
+    @FindBy(xpath="//*[@id=\'rightPanel\']/p[1]")
+    private WebElement returnCustomer;
+
+    @CacheLookup
+    @FindBy(xpath = "//*[@id=\'rightPanel\']/p[2]")
+    private WebElement returnMessage;
 
 
     public ContactFormPage(WebDriver driver, ContactFormModel contactFormModel) {
@@ -82,5 +89,33 @@ public class ContactFormPage extends CommonActionOnPages {
         submitedContactFormResul.add (getText(returnCustomer).trim());
         submitedContactFormResul.add(getText(returnMessage).trim());
         return submitedContactFormResul;
+    }
+    public List<String> isContactFormDonewithExplicitWait(){
+        List<String> submitedContactFormResul = new ArrayList<String>();
+        submitedContactFormResul.add(withExplicitWaitGetText(returnCustomer).trim());
+        submitedContactFormResul.add(withExplicitWaitGetText((WebElement) returnMessage).trim());
+        return submitedContactFormResul;
+    }
+
+
+    //Espera explicita
+    public void  fillContactFormModelwithExplicitWait() throws InterruptedException
+    {
+        scrollOn(contact);
+        withExplicitWaitClickOn(contact);
+
+        scrollOn(name);
+        withExplicitWaitTypeOn(name, contactFormModel.getName());
+
+        scrollOn(email);
+        withExplicitWaitTypeOn(email,contactFormModel.getEmail());
+
+        scrollOn(phone);
+        withExplicitWaitTypeOn(phone,contactFormModel.getPhone());
+
+        scrollOn(message);
+        withExplicitWaitTypeOn(message, contactFormModel.getMessage());
+
+        withExplicitWaitDoSubmit(submit);
     }
 }
