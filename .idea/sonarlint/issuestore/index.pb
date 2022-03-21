@@ -1,10 +1,6 @@
 
 i
 9src/main/java/co/com/daniela/page/common/BaseSikulix.java,f\c\fcc7679f19d7772bb5869493b6215aec7c400904
-b
-2src/main/java/co/com/daniela/util/Log4jValues.java,5\5\557b54b9769bd0733206d01d8a8d7bb19cd07c4f
-r
-Bsrc/main/java/co/com/daniela/page/contactform/ContactFormPage.java,c\0\c0894a0e3526a7916afbc9fcec2bfec53dfeac17
 t
 Dsrc/main/java/co/com/daniela/model/contactform/ContactFormModel.java,b\d\bd330a55eca6adffce8a52c8957151257ca68b80
 p
@@ -23,11 +19,9 @@ r
 Bsrc/test/java/co/com/daniela/runner/registerform/RegisterForm.java,1\0\1044fe70c41d5f07d00d5dcc09a6b3b385e87bdb
 A
 documentacion.log,8\1\81b5df733e9f705bea4487dd846e5dba80867c58
-‰
-Ysrc/test/java/co/com/daniela/stepdefinition/registerform/RegisterFormStepDefinitions.java,9\7\973d8298a67331a9ca0b73d901d3e01f01b9687d
 p
 @src/main/java/co/com/daniela/model/loginform/LoginFormModel.java,6\4\642d1fe823f88e0cb678af49ca8634c46772f67d
-†
-Vsrc/test/java/co/com/daniela/stepdefinition/contactform/ContactFormStepDefinition.java,8\a\8ae71f7cf43054f411d49b0c1b87f2fdc696fe23
-t
-Dsrc/main/java/co/com/daniela/page/registerform/RegisterFormPage.java,0\2\021c7e967980ba43b1212e39e09ee8f6df76be85
+l
+<src/test/java/co/com/daniela/stepdefinition/setup/WebUI.java,2\7\27f74b3da4f23c1c07ec5f78238b0eafe42ee71d
+q
+Asrc/main/java/co/com/daniela/page/common/CommonActionOnPages.java,f\6\f6403358e39a083f33af23a1b2b72cc936e71f2d

@@ -61,3 +61,9 @@
 2022-03-20 21:13:17 INFO  LoginFormStepDefinitions:35 Given: el usuario desea ingresar a la cuentaHolaMundo,12345678,
 2022-03-20 21:13:18 INFO  LoginFormStepDefinitions:51 WHEN:El usuario ingresa correctamente
 2022-03-20 21:13:18 INFO  LoginFormStepDefinitions:63 THEN: Resultado = true Accounts Overview | Accounts Overview
+2022-03-21 13:23:47 INFO  LoginFormStepDefinitions:78 SCENARIO: Datos invalidos
+2022-03-21 13:23:47 INFO  LoginFormStepDefinitions:79 Given: el usuario es invalidoDaniela12,
+2022-03-21 13:23:48 INFO  LoginFormStepDefinitions:94 WHEN:Se obtiene el usuario invalido
+2022-03-21 14:59:28 INFO  RegisterFormStepDefinitions:136 GIVEN: El nombre es invalido,
+2022-03-21 14:59:30 INFO  RegisterFormStepDefinitions:151 WHEN: se obtiene un nombre incorrecto
+2022-03-21 14:59:30 INFO  RegisterFormStepDefinitions:162 THEN: Respuesta = false [Welcome mckinley.koelpin, Your account was created successfully. You are now logged in.] | [Signing up is easy!, If you have an account with us you can sign-up for free instant online access. You will have to provide some personal information.]

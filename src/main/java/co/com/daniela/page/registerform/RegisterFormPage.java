@@ -79,8 +79,10 @@ public class RegisterFormPage extends CommonActionOnPages {
 
 
 
-    public RegisterFormPage(WebDriver driver) {
+    public RegisterFormPage(WebDriver driver, RegisterFormModel registerFormModel) {
         super(driver);
+        pageFactoryInitElement(driver, this);
+        this.registerFormModel = registerFormModel;
     }
 
     public RegisterFormPage(WebDriver driver, int seconds, boolean explicitTime, RegisterFormModel registerFormModel) {

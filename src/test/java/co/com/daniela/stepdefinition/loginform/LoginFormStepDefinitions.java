@@ -3,7 +3,6 @@ package co.com.daniela.stepdefinition.loginform;
 import co.com.daniela.model.loginform.LoginFormModel;
 import co.com.daniela.page.loginform.LoginFormPage;
 import co.com.daniela.stepdefinition.setup.WebUI;
-import com.github.javafaker.Faker;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -64,5 +63,52 @@ public class LoginFormStepDefinitions extends WebUI {
         Assertions.assertEquals(forLoginSumitForm(), loginFormPage.isLoginFormDone());
         quiteDriver();
     }
+
+    @Given("que el usuario desea poder ingresar a su cuenta")
+    public void que_el_usuario_desea_poder_ingresar_a_su_cuenta() {
+
+        try {
+            setUpLog4j2();
+            setUpWebDriver();
+            generalStUp();
+
+            loginFormModel = new LoginFormModel();
+            loginFormModel.setLogin("Daniela12");
+            loginFormModel.setPassword("12345678");
+            LOGGER.info("SCENARIO: Datos invalidos");
+            LOGGER.info("Given: el usuario es invalido"+
+                    loginFormModel.getLogin()+",");
+
+        }catch (Exception e){
+            quiteDriver();
+            Assertions.fail(e.getMessage(), e);
+            LOGGER.error(e.getMessage(),e);
+        }
+    }
+    @When("el usuario ingresa en la pagina el usuario invalido y contrasena correcta")
+    public void el_usuario_ingresa_en_la_pagina_el_usuario_invalido_y_contrasena_correcta() {
+
+        try {
+            loginFormPage = new LoginFormPage(driver,loginFormModel);
+            loginFormPage.fillLoginFormModel();
+            LOGGER.info("WHEN:Se obtiene el usuario invalido");
+        }
+        catch (Exception e){
+
+            quiteDriver();
+            Assertions.fail(e.getMessage(),e);
+            LOGGER.error(e.getMessage(),e);
+        }
+    }
+    @Then("Se muestra un mensaje de error en los datos ingresados")
+    public void se_muestra_un_mensaje_de_error_en_los_datos_ingresados() {
+
+        String result = Boolean.toString(forLoginSumitForm().equals(loginFormPage.isLoginFormDone()));
+        LOGGER.info("THEN: Resultado = "+result+" "+forLoginSumitForm()+" | "+loginFormPage.isLoginFormDone());
+        Assertions.assertNotEquals(forLoginSumitForm(), loginFormPage.isLoginFormDone());
+        quiteDriver();
+
+    }
+
 
 }
